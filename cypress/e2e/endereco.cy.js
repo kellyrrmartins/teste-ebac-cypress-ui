@@ -49,7 +49,7 @@ describe('Funcionalidade Endereços - Faturameto e Entrega', () => {
       'Endereço alterado com sucesso.'
     )
   })
-  it.only('Deve fazer cadastro de fatramento com sucesso - Usando arquivo de dados', () => {
+  it('Deve fazer cadastro de fatramento com sucesso - Usando arquivo de dados', () => {
     EnderecoPage.editarEnderecoEntrega(
       dadosEnderecoEntrega[0].nome,
       dadosEnderecoEntrega[0].sobrenome,
