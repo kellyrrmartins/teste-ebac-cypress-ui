@@ -14,7 +14,7 @@ describe('Funcionalidade Página de produto', () => {
       .click()
   })
 
-  it.only('Deve adicionar um produto ao carrinho', () => {
+  it('Deve adicionar um produto ao carrinho', () => {
     let quantidade = 8
     cy.get('[class="product-block grid"]')
       .contains('Atomic Endurance Running Tee (V-neck)')
@@ -28,5 +28,12 @@ describe('Funcionalidade Página de produto', () => {
       'contain',
       `${quantidade} × “Atomic Endurance Running Tee (V-neck)” foram adicionados no seu carrinho.`
     )
+  })
+  it('Deve adicionar produtos ao carrinho - Usando comandos customizados', () => {
+    cy.addProdutos('Atomic Endurance Running Tee (Crew-Neck)', 'M', 'Black', 3)
+  })
+
+  it('Deve adicionar produtos ao carrinho - Usando comandos customizados', () => {
+    cy.addProdutos('Atomic Endurance Running Tee (V-neck)', 'L', 'Blue', 4)
   })
 })
